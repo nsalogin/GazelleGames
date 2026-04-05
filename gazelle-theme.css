@@ -1,64 +1,62 @@
 /* ============================================================
-   GAZELLE TORRENT THEME — "Umbra"
-   A refined dark theme for Gazelle-based private trackers
-   Compatible with: Gazelle, Orpheus, Luminance, etc.
+   GAME TRACKER THEME — "Nightfall"
+   Dark theme for gaming private trackers
+   (Compatible with the site structure shown)
    
-   Installation: Paste into your tracker's custom.css or
-   use a browser extension like Stylus/Stylish.
+   Install via Stylus/Stylish browser extension
    ============================================================ */
 
-/* ── Typefaces ─────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 
-/* ── Design tokens ─────────────────────────────────────────── */
+/* ── Tokens ──────────────────────────────────────────────── */
 :root {
-  --bg-base:        #0d0f12;
-  --bg-surface:     #131519;
-  --bg-raised:      #1a1d23;
-  --bg-hover:       #21252e;
-  --bg-active:      #272c37;
+  --bg-base:       #0a0c10;
+  --bg-surface:    #0f1218;
+  --bg-raised:     #161a22;
+  --bg-hover:      #1c2130;
+  --bg-active:     #222840;
 
-  --border-subtle:  rgba(255,255,255,0.05);
-  --border-mid:     rgba(255,255,255,0.09);
-  --border-strong:  rgba(255,255,255,0.14);
+  --border-subtle: rgba(100,120,200,0.08);
+  --border-mid:    rgba(100,120,200,0.14);
+  --border-strong: rgba(100,120,200,0.22);
 
-  --text-primary:   #e8e6e1;
-  --text-secondary: #9da3b0;
-  --text-muted:     #5c6170;
-  --text-inverse:   #0d0f12;
+  --text-primary:  #dde3f0;
+  --text-secondary:#8892aa;
+  --text-muted:    #4a5268;
 
-  --accent:         #c9a96e;       /* warm gold */
-  --accent-dim:     #8a6e43;
-  --accent-glow:    rgba(201,169,110,0.12);
-  --accent-hover:   #d9be90;
+  --accent:        #4d9de0;       /* electric blue */
+  --accent-dim:    #2c5f8a;
+  --accent-glow:   rgba(77,157,224,0.10);
+  --accent-hover:  #7ab8eb;
 
-  --link:           #7eb8d4;
-  --link-hover:     #a8d4ea;
-  --link-visited:   #9b8fc9;
+  --gold:          #f0c040;
+  --gold-dim:      #8a6c18;
+  --gold-glow:     rgba(240,192,64,0.10);
 
-  --green:          #6abf8a;
-  --green-bg:       rgba(106,191,138,0.10);
-  --red:            #d97070;
-  --red-bg:         rgba(217,112,112,0.10);
-  --amber:          #d4a853;
-  --amber-bg:       rgba(212,168,83,0.10);
-  --blue:           #6fa3cc;
-  --blue-bg:        rgba(111,163,204,0.10);
-  --purple:         #a47dc8;
-  --purple-bg:      rgba(164,125,200,0.10);
+  --link:          #6baed6;
+  --link-hover:    #9ecae1;
+  --link-visited:  #9b8fc9;
 
-  --radius-sm:      3px;
-  --radius-md:      6px;
-  --radius-lg:      10px;
+  --green:         #56c27a;
+  --green-bg:      rgba(86,194,122,0.09);
+  --red:           #e05c5c;
+  --red-bg:        rgba(224,92,92,0.09);
+  --amber:         #e0a030;
+  --amber-bg:      rgba(224,160,48,0.09);
+  --purple:        #a87fd4;
+  --purple-bg:     rgba(168,127,212,0.09);
 
-  --font-ui:        'DM Sans', system-ui, sans-serif;
-  --font-serif:     'Libre Baskerville', Georgia, serif;
-  --font-mono:      'IBM Plex Mono', 'Courier New', monospace;
+  --font-ui:       'Inter', system-ui, sans-serif;
+  --font-display:  'Rajdhani', sans-serif;
+  --font-mono:     'JetBrains Mono', 'Courier New', monospace;
 
-  --transition:     0.15s ease;
+  --radius-sm:     3px;
+  --radius-md:     6px;
+  --radius-lg:     10px;
+  --t:             0.15s ease;
 }
 
-/* ── Global reset & base ───────────────────────────────────── */
+/* ── Base ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
@@ -66,347 +64,112 @@ html, body {
   color: var(--text-primary) !important;
   font-family: var(--font-ui) !important;
   font-size: 14px !important;
-  line-height: 1.65 !important;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.6 !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
-/* ── Links ─────────────────────────────────────────────────── */
+/* ── Links ────────────────────────────────────────────────── */
 a, a:link {
   color: var(--link) !important;
   text-decoration: none !important;
-  transition: color var(--transition) !important;
+  transition: color var(--t) !important;
 }
-a:hover { color: var(--link-hover) !important; }
+a:hover   { color: var(--link-hover) !important; text-decoration: none !important; }
 a:visited { color: var(--link-visited) !important; }
 a:visited:hover { color: var(--link-hover) !important; }
 
-/* ── Header / navigation bar ───────────────────────────────── */
-#header, #nav, .header, header {
+/* ── Site header / top bar ────────────────────────────────── */
+#header, #site-header, .header-bar,
+body > table:first-of-type,
+body > div:first-of-type > table {
   background: var(--bg-surface) !important;
   border-bottom: 1px solid var(--border-mid) !important;
-  padding: 0 !important;
 }
 
-#logo, #logo img, .logo {
-  filter: brightness(0.9) saturate(0.85) !important;
+/* Site logo / name */
+#logo, .site-name, h1#sitename,
+a[href="/"] > img, #logo img {
+  filter: drop-shadow(0 0 8px rgba(77,157,224,0.4)) !important;
 }
 
-/* Navigation menu */
-#nav ul, nav ul, .nav ul,
-#main-menu, .nav-menu, #nav-bottom {
-  background: transparent !important;
-  border: none !important;
+/* ── Navigation menus ─────────────────────────────────────── */
+/* Top horizontal nav */
+#nav, #main-nav, .navigation, div#nav,
+body > div > ul:first-of-type {
+  background: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  padding: 0 8px !important;
+  list-style: none !important;
   margin: 0 !important;
-  padding: 0 4px !important;
 }
 
-#nav li, nav li, .nav li {
-  background: transparent !important;
-  border: none !important;
-}
-
-#nav li a, nav li a, .nav-item a, .nav a {
+/* All nav links (top bar items: Friends, Achievements, etc.) */
+#nav a, #main-nav a, .navigation a,
+body > div > ul:first-of-type a {
   color: var(--text-secondary) !important;
   font-size: 13px !important;
-  font-weight: 400 !important;
-  padding: 10px 14px !important;
+  padding: 8px 12px !important;
   display: inline-block !important;
   border-radius: var(--radius-sm) !important;
-  letter-spacing: 0.01em !important;
-  transition: color var(--transition), background var(--transition) !important;
+  transition: color var(--t), background var(--t) !important;
 }
 
-#nav li a:hover, nav li a:hover, .nav-item a:hover {
+#nav a:hover, #main-nav a:hover,
+body > div > ul:first-of-type a:hover {
   color: var(--accent) !important;
   background: var(--accent-glow) !important;
 }
 
-#nav li.active > a, #nav li.selected > a,
-nav .current > a, .nav .active > a {
-  color: var(--accent) !important;
-  background: var(--accent-glow) !important;
-}
-
-/* Dropdown menus */
-#nav li ul, nav li ul, .nav li ul,
-.dropdown-menu, .subnav {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-mid) !important;
-  border-radius: var(--radius-md) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
-  padding: 4px 0 !important;
-}
-
-#nav li ul li a, nav li ul li a,
-.dropdown-menu li a {
-  color: var(--text-secondary) !important;
-  padding: 7px 14px !important;
-  display: block !important;
-  border-radius: 0 !important;
-}
-
-#nav li ul li a:hover, .dropdown-menu li a:hover {
-  color: var(--text-primary) !important;
-  background: var(--bg-hover) !important;
-}
-
-/* Search bar in header */
-#header #search, .search-bar {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-mid) !important;
-  border-radius: var(--radius-md) !important;
+/* Sidebar / vertical nav lists */
+#userinfo-stats, #userinfo-links, #menu,
+.sidebar ul, #sidebar ul, div#menu ul,
+div#userinfo ul {
+  list-style: none !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-lg) !important;
   overflow: hidden !important;
 }
 
-#header #search input[type=text],
-#header #search input[type=search] {
-  background: transparent !important;
-  border: none !important;
-  color: var(--text-primary) !important;
-  padding: 6px 10px !important;
-  font-family: var(--font-ui) !important;
-}
-
-#header #search button, .search-bar button {
-  background: var(--accent-dim) !important;
-  color: var(--text-primary) !important;
-  border: none !important;
+#userinfo-stats li, #userinfo-links li, #menu li,
+.sidebar ul li, #sidebar ul li,
+div#menu ul li, div#userinfo ul li {
+  border-bottom: 1px solid var(--border-subtle) !important;
   padding: 6px 12px !important;
-  cursor: pointer !important;
-  transition: background var(--transition) !important;
-}
-
-#header #search button:hover { background: var(--accent) !important; color: var(--text-inverse) !important; }
-
-/* User info strip */
-#userinfo, .userinfo, #user-info {
-  color: var(--text-secondary) !important;
-  font-size: 12.5px !important;
-  background: var(--bg-base) !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 4px 16px !important;
-}
-
-/* ── Main content wrapper ───────────────────────────────────── */
-#content, #main, .content-wrapper, main {
-  background: transparent !important;
-  padding: 16px 20px !important;
-}
-
-/* ── Boxes / panels ─────────────────────────────────────────── */
-.box, .thin, .box_dark, .box_log, .box_top,
-div.box, div.thin, .panel, .torrent-group,
-#content > div > div,
-.linkbox, .browse_table_container {
-  background: var(--bg-surface) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: var(--radius-lg) !important;
-  margin-bottom: 12px !important;
-  overflow: hidden !important;
-}
-
-.box h2, .box h3, .thin h2, .thin h3,
-.header, .head, div.head,
-.colhead, h2.header {
-  background: var(--bg-raised) !important;
-  color: var(--accent) !important;
-  font-family: var(--font-ui) !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  padding: 9px 14px !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  margin: 0 !important;
-}
-
-.box .pad, .thin .pad, .body, .box_body {
-  padding: 12px 14px !important;
-}
-
-/* ── Tables ─────────────────────────────────────────────────── */
-table, .table {
-  width: 100% !important;
-  border-collapse: collapse !important;
   font-size: 13px !important;
-}
-
-table th, .torrent_table th, .colhead_dark {
-  background: var(--bg-raised) !important;
-  color: var(--text-muted) !important;
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
-  padding: 8px 12px !important;
-  border-bottom: 1px solid var(--border-mid) !important;
-  white-space: nowrap !important;
-}
-
-table th a { color: var(--text-muted) !important; }
-table th a:hover { color: var(--accent) !important; }
-
-table td, .torrent_table td {
-  padding: 8px 12px !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  color: var(--text-primary) !important;
-  vertical-align: middle !important;
-}
-
-table tr:last-child td { border-bottom: none !important; }
-
-table tr:hover td, .torrent_table tr:hover td {
-  background: var(--bg-hover) !important;
-}
-
-/* Row striping */
-table tr:nth-child(even) td,
-.torrent_table tr.group_torrent:nth-child(even) td {
-  background: rgba(255,255,255,0.015) !important;
-}
-
-/* ── Torrent listing ────────────────────────────────────────── */
-/* Group rows */
-.torrent_table tr.group td {
-  background: var(--bg-surface) !important;
-  border-top: 1px solid var(--border-mid) !important;
-  font-size: 13.5px !important;
-}
-
-.torrent_table tr.group:hover td {
-  background: var(--bg-hover) !important;
-}
-
-/* Edition / torrent rows */
-.torrent_table tr.group_torrent td {
-  background: var(--bg-base) !important;
-  padding-left: 24px !important;
-  font-size: 12.5px !important;
-}
-
-.torrent_table tr.group_torrent:hover td {
-  background: rgba(255,255,255,0.025) !important;
-}
-
-/* Torrent tags */
-.tags a, .tag {
-  background: var(--bg-active) !important;
   color: var(--text-secondary) !important;
-  border: 1px solid var(--border-mid) !important;
-  border-radius: 3px !important;
-  font-size: 11px !important;
-  padding: 1px 6px !important;
-  margin: 0 1px !important;
-  white-space: nowrap !important;
-  transition: color var(--transition), border-color var(--transition) !important;
+  list-style: none !important;
 }
 
-.tags a:hover, .tag:hover {
-  color: var(--accent) !important;
-  border-color: var(--accent-dim) !important;
+#userinfo-stats li:last-child,
+#userinfo-links li:last-child,
+.sidebar ul li:last-child,
+div#menu ul li:last-child {
+  border-bottom: none !important;
 }
 
-/* Seeder / leecher badges */
-.seed_status, .leech_status,
-td.seeders, td.leechers {
-  font-family: var(--font-mono) !important;
-  font-size: 12px !important;
-}
-
-td.seeders { color: var(--green) !important; }
-td.leechers { color: var(--red) !important; }
-td.snatched { color: var(--accent) !important; }
-td.size { color: var(--text-secondary) !important; font-family: var(--font-mono) !important; }
-
-/* Free leech / highlight labels */
-.torrent_table .freeleech, span.free, .free_torrent {
-  background: var(--green-bg) !important;
-  color: var(--green) !important;
-  border: 1px solid rgba(106,191,138,0.25) !important;
-  border-radius: 3px !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  padding: 1px 5px !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-}
-
-.torrent_table .neutral_leech, span.neutral {
-  background: var(--amber-bg) !important;
-  color: var(--amber) !important;
-  border: 1px solid rgba(212,168,83,0.25) !important;
-  border-radius: 3px !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  padding: 1px 5px !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-}
-
-.torrent_table .sitewide_fl, span.sitewide {
-  background: var(--purple-bg) !important;
-  color: var(--purple) !important;
-  border: 1px solid rgba(164,125,200,0.25) !important;
-  border-radius: 3px !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  padding: 1px 5px !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-}
-
-/* ── Torrent detail page ────────────────────────────────────── */
-#torrent_details, .torrent_details {
-  background: var(--bg-surface) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: var(--radius-lg) !important;
-}
-
-.torrent_cover, .album_cover { border-radius: var(--radius-md) !important; }
-
-.torrent_info td:first-child {
-  color: var(--text-muted) !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: uppercase !important;
-  white-space: nowrap !important;
-  width: 130px !important;
-}
-
-/* Description / body text */
-.torrent_description, .body, .postbody {
-  font-family: var(--font-ui) !important;
-  font-size: 14px !important;
-  line-height: 1.75 !important;
-  color: var(--text-primary) !important;
-}
-
-/* ── Forms & inputs ─────────────────────────────────────────── */
-input[type=text], input[type=password], input[type=email],
-input[type=number], input[type=url], input[type=search],
-textarea, select {
+/* ── Search form inputs ───────────────────────────────────── */
+/* The search dropdowns / boxes in the nav */
+select, input[type="text"], input[type="search"],
+input[type="password"], input[type="email"],
+input[type="number"], input[type="url"], textarea {
   background: var(--bg-raised) !important;
   border: 1px solid var(--border-mid) !important;
   border-radius: var(--radius-md) !important;
   color: var(--text-primary) !important;
   font-family: var(--font-ui) !important;
   font-size: 13px !important;
-  padding: 6px 10px !important;
+  padding: 5px 9px !important;
   outline: none !important;
-  transition: border-color var(--transition), box-shadow var(--transition) !important;
+  transition: border-color var(--t), box-shadow var(--t) !important;
+  -webkit-appearance: none !important;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus,
-input[type=number]:focus, input[type=url]:focus, input[type=search]:focus,
-textarea:focus, select:focus {
+select:focus, input:focus, textarea:focus {
   border-color: var(--accent-dim) !important;
   box-shadow: 0 0 0 3px var(--accent-glow) !important;
-}
-
-input::placeholder, textarea::placeholder {
-  color: var(--text-muted) !important;
-  opacity: 1 !important;
 }
 
 select option {
@@ -414,9 +177,14 @@ select option {
   color: var(--text-primary) !important;
 }
 
-/* ── Buttons ─────────────────────────────────────────────────── */
-input[type=submit], input[type=button],
-button, .button, .btn, a.button, a.btn {
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+input[type="submit"], input[type="button"],
+button, .button, .btn {
   background: var(--bg-raised) !important;
   border: 1px solid var(--border-strong) !important;
   border-radius: var(--radius-md) !important;
@@ -424,96 +192,243 @@ button, .button, .btn, a.button, a.btn {
   cursor: pointer !important;
   font-family: var(--font-ui) !important;
   font-size: 13px !important;
-  font-weight: 400 !important;
-  padding: 6px 14px !important;
-  transition: background var(--transition), border-color var(--transition), color var(--transition) !important;
-  text-decoration: none !important;
-  display: inline-block !important;
+  padding: 5px 14px !important;
+  transition: background var(--t), border-color var(--t), color var(--t) !important;
 }
 
-input[type=submit]:hover, button:hover, .button:hover, .btn:hover, a.button:hover {
+input[type="submit"]:hover, button:hover, .button:hover {
   background: var(--bg-active) !important;
   border-color: var(--accent-dim) !important;
   color: var(--accent-hover) !important;
 }
 
-input[type=submit]:active, button:active { transform: translateY(1px) !important; }
-
-/* Primary / download button */
-.button_download, .download, input[type=submit].download,
-a[href*="download"], a[href*="Download"] {
-  background: var(--accent-dim) !important;
-  border-color: var(--accent-dim) !important;
-  color: var(--text-inverse) !important;
-  font-weight: 500 !important;
+/* ── Main layout containers ───────────────────────────────── */
+#content, #wrapper, #main-content, .content,
+body > div#content {
+  background: transparent !important;
+  padding: 14px 16px !important;
 }
 
-.button_download:hover, .download:hover, a[href*="download"]:hover {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: var(--text-inverse) !important;
-}
-
-/* ── Pagination ─────────────────────────────────────────────── */
-.linkbox, .pagination, div.pages {
-  display: flex !important;
-  gap: 4px !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-}
-
-.linkbox a, .pagination a, div.pages a {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-mid) !important;
-  border-radius: var(--radius-sm) !important;
-  color: var(--text-secondary) !important;
-  font-size: 12px !important;
-  padding: 4px 9px !important;
-  transition: background var(--transition), color var(--transition) !important;
-}
-
-.linkbox a:hover, .pagination a:hover, div.pages a:hover {
-  background: var(--bg-active) !important;
-  color: var(--accent) !important;
-  border-color: var(--accent-dim) !important;
-}
-
-.linkbox a.current, .pagination a.current,
-.linkbox strong, div.pages strong {
-  background: var(--accent-dim) !important;
-  border-color: var(--accent-dim) !important;
-  color: #fff !important;
-  font-weight: 500 !important;
-}
-
-/* ── Forum ──────────────────────────────────────────────────── */
-.forum_post, .post_container {
+/* Generic div/table boxes used by Gazelle forks */
+.box, div.box, .thin, div.thin,
+.torrent-page, #content > div,
+.main_column, #main_column {
   background: var(--bg-surface) !important;
   border: 1px solid var(--border-subtle) !important;
   border-radius: var(--radius-lg) !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 12px !important;
   overflow: hidden !important;
 }
 
-.post_head, .forum_header {
+/* Box headings */
+.box h2, .box h3, .box h4,
+.thin h2, .thin h3,
+div.head, .colhead, h2.header,
+.box > .head, .panel-header {
   background: var(--bg-raised) !important;
   border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 8px 14px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  font-size: 12.5px !important;
+  color: var(--accent) !important;
+  font-family: var(--font-display) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.07em !important;
+  margin: 0 !important;
+  padding: 8px 13px !important;
+  text-transform: uppercase !important;
+}
+
+/* Box body padding */
+.box .pad, .thin .pad, .box .body,
+div.pad, .box_body { padding: 12px 14px !important; }
+
+/* ── News / announcement bar ──────────────────────────────── */
+#news, .news, .newsposts, div#news,
+.announcement {
+  background: var(--bg-surface) !important;
+  border: 1px solid rgba(77,157,224,0.2) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
   color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
+  padding: 9px 14px !important;
 }
 
-.post_body, .forum_post .body {
-  padding: 14px 16px !important;
-  font-size: 14px !important;
-  line-height: 1.75 !important;
+/* The "Low Seed Freeleech!" and NEWS banners */
+#news a, .news a { color: var(--accent-hover) !important; font-weight: 500 !important; }
+
+/* ── Torrent list ─────────────────────────────────────────── */
+/* The bullet list of torrents on the front page / browse */
+ul#torrent-list, #torrentlist, .torrent-list,
+#content ul, .newsposts ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Quote blocks */
-blockquote, div.quotebox, .quote {
+#content ul li, .newsposts ul li,
+ul#torrent-list li {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  padding: 7px 14px !important;
+  transition: background var(--t) !important;
+}
+
+#content ul li:hover, ul#torrent-list li:hover {
+  background: var(--bg-hover) !important;
+}
+
+#content ul li:last-child { border-bottom: none !important; }
+
+/* ── FL / badge tags ─────────────────────────────────────── */
+/* [FL] tags */
+span.tag_fl, .fl_tag, span[title="FreeLeech"],
+a[title="FreeLeech"],
+/* Match the [ FL ] bracketed labels */
+li > a:first-child {
+  /* handled per-element below */
+}
+
+/* Freeleech badge */
+.freeleech, span.free, .free_torrent, span.fl,
+a.fl, span[class*="free"] {
+  background: var(--green-bg) !important;
+  border: 1px solid rgba(86,194,122,0.25) !important;
+  border-radius: 3px !important;
+  color: var(--green) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+  padding: 1px 5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Platform labels like [ Windows ] [ PlayStation 3 ] */
+.platform, .platform_tag, span.platform {
+  background: var(--bg-active) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 3px !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px !important;
+  padding: 1px 6px !important;
+}
+
+/* ── Tables ─────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  font-size: 13px !important;
+}
+
+table th, .colhead_dark, .th {
+  background: var(--bg-raised) !important;
+  border-bottom: 1px solid var(--border-mid) !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-display) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.07em !important;
+  padding: 7px 11px !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+table td {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  padding: 7px 11px !important;
+  vertical-align: middle !important;
+}
+
+table tr:last-child td { border-bottom: none !important; }
+table tr:hover td { background: var(--bg-hover) !important; }
+table tr:nth-child(even) td { background: rgba(255,255,255,0.013) !important; }
+
+/* seed/leech/snatch columns */
+td.seed_col, td.seeds, td.seeders { color: var(--green) !important; font-family: var(--font-mono) !important; font-size: 12px !important; }
+td.leech_col, td.leeches, td.leechers { color: var(--red) !important; font-family: var(--font-mono) !important; font-size: 12px !important; }
+td.snatch_col, td.snatches { color: var(--gold) !important; font-family: var(--font-mono) !important; font-size: 12px !important; }
+td.size_col, td.size { color: var(--text-secondary) !important; font-family: var(--font-mono) !important; font-size: 11.5px !important; }
+
+/* ── User info panel (sidebar stats) ─────────────────────── */
+/* "Uploaded: 567.36 GB [155]" etc. */
+#userinfo, #user-info, .userinfo,
+div#userinfo {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden !important;
+  margin-bottom: 12px !important;
+}
+
+/* Key-value pairs in user info */
+#userinfo li b, #user-info li b,
+.userinfo li b, div#userinfo li b {
+  color: var(--text-muted) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em !important;
+  margin-right: 4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Ratio good / bad */
+.ratio_good, .good_ratio, span[style*="color: green"],
+span[style*="color:green"] {
+  color: var(--green) !important;
+}
+
+.ratio_bad, .bad_ratio, span[style*="color: red"],
+span[style*="color:red"] {
+  color: var(--red) !important;
+}
+
+.ratio_ok, span[style*="color: orange"],
+span[style*="color:orange"] {
+  color: var(--amber) !important;
+}
+
+/* "Active" user class badge at top */
+#class, .userclass, .user_class,
+span.class, div.userinfo > span:first-child {
+  background: var(--accent-glow) !important;
+  border: 1px solid var(--accent-dim) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--accent) !important;
+  font-family: var(--font-display) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  padding: 2px 7px !important;
+  text-transform: uppercase !important;
+}
+
+/* Gold display */
+.gold, span[title="Gold"], .credits {
+  color: var(--gold) !important;
+  font-family: var(--font-mono) !important;
+}
+
+/* ── Donate / special links ───────────────────────────────── */
+a[href*="donate"], a.donate {
+  color: var(--gold) !important;
+  font-weight: 500 !important;
+}
+
+a[href*="donate"]:hover { color: #ffd966 !important; }
+
+/* Donate percent */
+a[href*="donate"] + *, .donate_percent {
+  color: var(--amber) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+}
+
+/* ── Quote / code blocks ──────────────────────────────────── */
+blockquote, .quotebox, .quote {
   background: var(--bg-raised) !important;
   border-left: 3px solid var(--accent-dim) !important;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
@@ -523,220 +438,191 @@ blockquote, div.quotebox, .quote {
   padding: 10px 14px !important;
 }
 
-blockquote cite, .quotebox .quote_author {
-  color: var(--accent) !important;
-  font-size: 12px !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  display: block !important;
-  margin-bottom: 4px !important;
-}
-
-/* Code blocks */
-code, pre, .code {
+code, pre {
   background: var(--bg-raised) !important;
   border: 1px solid var(--border-mid) !important;
   border-radius: var(--radius-sm) !important;
-  color: #c9d1d9 !important;
+  color: #c0d0ec !important;
   font-family: var(--font-mono) !important;
-  font-size: 12.5px !important;
+  font-size: 12px !important;
+  font-style: normal !important;
 }
 
 code { padding: 1px 5px !important; }
-pre, pre code { padding: 12px 14px !important; display: block !important; overflow-x: auto !important; }
+pre  { display: block !important; overflow-x: auto !important; padding: 10px 13px !important; }
 
-/* Spoiler tags */
-.spoiler_show, .spoiler_content,
-details > summary { cursor: pointer !important; }
-
-details > summary {
-  color: var(--accent) !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.04em !important;
-}
-
-details[open] > summary { color: var(--accent-hover) !important; }
-
-/* ── User profiles ───────────────────────────────────────────── */
-.user_avatar, .avatar {
-  border-radius: var(--radius-md) !important;
-  border: 2px solid var(--border-mid) !important;
-}
-
-.user_class, .user-class, .permission_class {
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-}
-
-/* Stats bars */
-.ratio_bar, .progress_bar, progress {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-mid) !important;
-  border-radius: 99px !important;
-  height: 6px !important;
+/* ── Forum / posts ────────────────────────────────────────── */
+.forum_post, .post, .forum-post {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-lg) !important;
+  margin-bottom: 10px !important;
   overflow: hidden !important;
 }
 
-.ratio_fill, .progress_fill, progress::-webkit-progress-value {
-  background: var(--accent) !important;
-  border-radius: 99px !important;
-  transition: width 0.3s ease !important;
+.post_head, .forum_post .head {
+  background: var(--bg-raised) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+  padding: 7px 13px !important;
 }
 
-progress::-webkit-progress-bar { background: var(--bg-raised) !important; }
-progress::-moz-progress-bar { background: var(--accent) !important; }
-
-/* ── Inbox / notifications ─────────────────────────────────── */
-.inbox_new, .notif_new, .newmessage {
-  background: var(--accent-glow) !important;
-  border-left: 3px solid var(--accent) !important;
+.postbody, .post_body {
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+  padding: 13px 15px !important;
 }
 
-.alert, .alert_message, .notification {
+/* ── Pagination ───────────────────────────────────────────── */
+.linkbox, .pages, .pagination, div.pages {
+  align-items: center !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 3px !important;
+  padding: 9px 12px !important;
+}
+
+.linkbox a, .pages a, .pagination a {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border-mid) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+  padding: 3px 8px !important;
+  transition: background var(--t), color var(--t), border-color var(--t) !important;
+}
+
+.linkbox a:hover, .pages a:hover {
+  background: var(--bg-active) !important;
+  border-color: var(--accent-dim) !important;
+  color: var(--accent) !important;
+}
+
+.linkbox strong, .pages strong, .pagination .current {
+  background: var(--accent-dim) !important;
+  border: 1px solid var(--accent-dim) !important;
+  border-radius: var(--radius-sm) !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 3px 8px !important;
+}
+
+/* ── Alerts & notices ─────────────────────────────────────── */
+.alert, .notice, .warning_message {
   background: var(--amber-bg) !important;
-  border: 1px solid rgba(212,168,83,0.3) !important;
+  border: 1px solid rgba(224,160,48,0.28) !important;
   border-radius: var(--radius-md) !important;
   color: var(--amber) !important;
-  padding: 10px 14px !important;
-  margin: 8px 0 !important;
   font-size: 13px !important;
+  margin-bottom: 10px !important;
+  padding: 9px 13px !important;
 }
 
 .success, .alert_success {
   background: var(--green-bg) !important;
-  border: 1px solid rgba(106,191,138,0.3) !important;
+  border-color: rgba(86,194,122,0.28) !important;
   color: var(--green) !important;
 }
 
-.error, .alert_error, .warning {
+.error, .alert_error {
   background: var(--red-bg) !important;
-  border: 1px solid rgba(217,112,112,0.3) !important;
+  border-color: rgba(224,92,92,0.28) !important;
   color: var(--red) !important;
 }
 
-/* ── Sidebar / stats ─────────────────────────────────────────── */
-.sidebar, #sidebar, .stats_box {
-  background: var(--bg-surface) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: var(--radius-lg) !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-.sidebar .head, #sidebar .head,
-.stats_box .head {
-  background: var(--bg-raised) !important;
-  color: var(--accent) !important;
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  padding: 8px 12px !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-}
-
-.sidebar ul, #sidebar ul, .stats_box ul {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 6px 0 !important;
-}
-
-.sidebar ul li, #sidebar ul li {
-  border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 6px 12px !important;
-  font-size: 13px !important;
-}
-
-.sidebar ul li:last-child { border-bottom: none !important; }
-
-/* ── Ratio / upload stats display ───────────────────────────── */
-#stats, .stats {
-  font-family: var(--font-mono) !important;
-  font-size: 12px !important;
-}
-
-.upload_size, .download_size,
-td.upload, td.download {
-  font-family: var(--font-mono) !important;
-  color: var(--text-secondary) !important;
-}
-
-.ratio_good, .ratio-good { color: var(--green) !important; }
-.ratio_ok, .ratio-ok     { color: var(--amber) !important; }
-.ratio_bad, .ratio-bad   { color: var(--red) !important; }
-
-/* ── Collapsible sections ───────────────────────────────────── */
-.hndle, .torrent_expand, .collapse_head {
-  cursor: pointer !important;
-  user-select: none !important;
-}
-
-.hndle::before {
-  content: '▸ ' !important;
-  color: var(--accent-dim) !important;
-  font-size: 10px !important;
-}
-
-.collapsed .hndle::before { content: '▾ ' !important; }
-
-/* ── Tooltips ─────────────────────────────────────────────────── */
-.tooltip, [data-tooltip]::after {
-  background: var(--bg-active) !important;
-  border: 1px solid var(--border-strong) !important;
-  border-radius: var(--radius-md) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
-  color: var(--text-primary) !important;
-  font-size: 12px !important;
-  padding: 6px 10px !important;
-}
-
-/* ── Footer ──────────────────────────────────────────────────── */
-#footer, footer {
+/* ── Footer ───────────────────────────────────────────────── */
+#footer, footer, div#footer {
   background: var(--bg-surface) !important;
   border-top: 1px solid var(--border-subtle) !important;
   color: var(--text-muted) !important;
   font-size: 12px !important;
-  padding: 14px 20px !important;
+  margin-top: 20px !important;
+  padding: 12px 16px !important;
   text-align: center !important;
-  margin-top: 24px !important;
 }
 
 #footer a, footer a { color: var(--text-muted) !important; }
 #footer a:hover, footer a:hover { color: var(--accent) !important; }
 
-/* ── Scrollbars (Webkit) ─────────────────────────────────────── */
+/* ── Scrollbars ───────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 7px; height: 7px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb {
-  background: var(--bg-active);
-  border-radius: 99px;
-}
+::-webkit-scrollbar-thumb { background: var(--bg-active); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
 
-/* ── Selection ───────────────────────────────────────────────── */
+/* ── Selection ────────────────────────────────────────────── */
 ::selection {
-  background: rgba(201,169,110,0.25) !important;
+  background: rgba(77,157,224,0.22) !important;
   color: var(--text-primary) !important;
 }
 
-/* ── Misc utility classes ────────────────────────────────────── */
+/* ── Misc ─────────────────────────────────────────────────── */
 hr {
   border: none !important;
   border-top: 1px solid var(--border-subtle) !important;
-  margin: 12px 0 !important;
+  margin: 10px 0 !important;
 }
 
-img { border-radius: var(--radius-sm) !important; }
+img { border-radius: var(--radius-sm) !important; max-width: 100% !important; }
 
-.hidden { display: none !important; }
+/* Override any inline white/light backgrounds */
+[style*="background: white"],
+[style*="background:white"],
+[style*="background-color: white"],
+[style*="background-color:#fff"],
+[style*="background-color: #fff"],
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background-color: #ffffff"],
+[style*="background:#ffffff"] {
+  background: var(--bg-surface) !important;
+}
 
-/* Genre / category colors */
-.cat_music    { color: #7eb8d4 !important; }
-.cat_apps     { color: #6abf8a !important; }
-.cat_ebooks   { color: #a47dc8 !important; }
-.cat_comics   { color: #d4a853 !important; }
-.cat_audiobook{ color: #d97070 !important; }
-.cat_default  { color: var(--text-secondary) !important; }
+/* Override inline dark text on now-dark backgrounds */
+[style*="color: black"], [style*="color:black"],
+[style*="color: #000"], [style*="color:#000"],
+[style*="color: #333"], [style*="color:#333"],
+[style*="color: #444"], [style*="color:#444"] {
+  color: var(--text-primary) !important;
+}
+
+/* ── Platform-specific color accents ─────────────────────── */
+/* Color-code platform labels for quick scanning */
+a[href*="PlayStation"], span[title*="PlayStation"],
+li:has(> a[href*="PlayStation"]) { border-left: 2px solid #003791 !important; }
+
+a[href*="Windows"], span[title*="Windows"],
+li:has(> a[href*="Windows"])     { border-left: 2px solid #0078d4 !important; }
+
+a[href*="Nintendo"], span[title*="Nintendo"],
+li:has(> a[href*="Nintendo"])    { border-left: 2px solid #e60012 !important; }
+
+/* ── Gamesite-specific: torrent list items ─────────────────── */
+/* The main index torrent bullet list */
+#content > ul > li {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 4px !important;
+  padding: 7px 12px !important;
+  transition: background var(--t), border-color var(--t) !important;
+  list-style: none !important;
+}
+
+#content > ul > li:hover {
+  background: var(--bg-hover) !important;
+  border-color: var(--border-mid) !important;
+}
+
+/* File size labels */
+#content > ul > li > span:last-child,
+.torrent_size, .filesize {
+  color: var(--text-muted) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11.5px !important;
+}
